@@ -1,17 +1,25 @@
-## page was renamed from DebianInstallerPreseed
-#language en
-~-[[DebianWiki/EditorGuide#translation|Translation(s)]]: English - [[fr/DebianInstaller/Preseed|Françs]]-~
-----
-= Preseeding d-i =
-Preseeding provides a way to set answers to questions asked during the installation process, without having to manually enter the answers while the installation is running. This makes it possible to fully automate most types of installation and even offers some features not available during normal installations.
+Preseeding d-i
+==============
 
-Most of the questions asked by DebianInstaller can be preseeded by setting the answers in the [[debconf]] database. The Installation Guide includes an [[http://www.debian.org/releases/stable/i386/apb.html|extensive appendix]] dedicated to preseeding. For concrete preseed files look below. Feel free to add any information that is not covered in the manual to the notes below.
+Preseeding provides a way to set answers to questions asked during the
+installation process, without having to manually enter the answers while
+the installation is running. This makes it possible to fully automate most
+types of installation and even offers some features not available during 
+normal installations.
 
-= Preseeding methods =
+Most of the questions asked by DebianInstaller can be preseeded by setting the
+answers in the `debconf`_ database. The Installation Guide includes an `extensive appendix`_ dedicated to preseeding. For concrete preseed files look below. 
+Feel free to add any information that is not covered in the manual to the 
+notes below.
 
-As mentioned in the [[http://www.debian.org/releases/stable/i386/apb.html|official installation guide]], there are several ways to feed the preseed file to the installer.
+Preseeding methods
+------------------
 
-== Adding the preseed file to the installer's initrd.gz ==
+As mentioned in the `official installation guide`_, there are several ways to
+feed the preseed file to the installer.
+
+Adding the preseed file to the installer's initrd.gz
+----------------------------------------------------
 
 Installation can be fully automated by adding a preseed file to the installer ISO's initrd.gz. This method is described in detail in [[DebianInstaller/Preseed/EditIso|this wiki article]]. The downside of this method is that net installer has to be generated whenever a preseed file is modified.
 
@@ -63,3 +71,8 @@ Post here any links you have to example preseed files. Note that using any of th
  * To install additional packages in etch, you can {{{preseed preseed/early_command}}} to run "apt-install package".
  * Look in debconf-devel(7) in the debconf-doc package for more docs about d-i and debian-installer preseed questions.
  * If your preseed value is being ignored and whilst using DEBCONF_DEBUG=5 to watch the debconf output you see "FSET blah false" it just means that a piece of code really wants that question to be seen, and such questions are not normally preseedable - the only way to avoid them is to avoid the situation that gives rise to that question being asked.
+
+.. _official installation guide: http://www.debian.org/releases/stable/i386/apb.html
+.. _extensive appendix: http://www.debian.org/releases/stable/i386/apb.html
+.. _debconf: http://wiki.debian.org/debconf
+.. _DebianInstaller: http://wiki.debian.org/DebianInstaller
