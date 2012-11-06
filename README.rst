@@ -1,6 +1,8 @@
 Preseeding d-i
 ==============
 
+The up to date documentation about preseed can be found at DebianInstaller_ page.
+
 Preseeding provides a way to set answers to questions asked during the
 installation process, without having to manually enter the answers while
 the installation is running. This makes it possible to fully automate most
